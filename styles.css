@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+input[type="email"] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+button[type="submit"] {
+  background-color: #c29994;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button[type="submit"]:hover {
+  background-color: #b8918c;
+}
+
+.verticalForm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 400px;
+  margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .verticalForm {
+    width: 80%;
+  }
+}
