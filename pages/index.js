@@ -1,47 +1,54 @@
-import Link from 'next/link'
+// import Link from 'next/link';
+import { useState } from 'react';
+import MyModal from '../components/Modal';
 
-// import .env file
-// import '../.env';
-
-
-// const Index = () => (
-//   <div>
-//     Hello World.{' '}
-//     <Link href="/about">
-//       <a>About</a>
-//     </Link>
-//   </div>
-// )
-
-/**
- * 
- * form css:
- * "display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 400px;
-    margin: auto;"
- */
-export async function getStaticProps() {
-  console.log(process.env.SS_TWO)
-  console.log(process.env.NEXT_PUBLIC_SS_THREE)
-  return { props: { name: 'John Doe' }};
-}
-
-function validateFormWithJS(event) {
+async function validateFormWithJS(event) {
   event.preventDefault();
-  console.log('validateFormWithJS()', { event });
+
   const email = event.target[0].value;
-  fetch('/api/waitlist', {
+  const res = await fetch('/api/waitlist', {
     method: 'POST',
-    body: JSON.stringify({ email })
-  })
+    body: JSON.stringify({ email }),
+  });
+
+  const { success } = await res.json();
+
+  return success;
 }
 
-const Index = () => (
-  <div className="container">
-      <h1 style={{fontFamily: 'Georgia'}}>
-        Get Personalized
+const Index = () => {
+  let [isOpen, setIsOpen] = useState(false);
+  let [email, setEmail] = useState('');
+
+  async function handleAddToWaitlist(event) {
+    const success = await validateFormWithJS(event);
+
+    if (success) {
+      clearEmail();
+      openModal();
+    }
+  }
+
+  function closeModal() {
+    setIsOpen(false)
+  }
+
+  function openModal() {
+    setIsOpen(true)
+  }
+
+  function handleUserInput(e) {
+    setEmail(e.target.value);
+  };
+
+  function clearEmail() {
+    setEmail('');
+  }
+
+  return (
+    <div className="container">
+      <h1 className="font-bold font-serif leading-tight">
+        Personalized
         <br />
         On Demand
         <br />
@@ -49,15 +56,20 @@ const Index = () => (
         <br />
         Health Coaching
       </h1>
-      {/* circular profile pic */}
-      <img src="/prathna.png" alt="profile pic" style={{borderRadius: '50%', width: '150px', height: '150px'}} />
-      <h2 style={{fontFamily: 'Georgia'}}>Prathna Patel</h2>
+      <img src="/prathna.png" alt="profile pic" style={{ borderRadius: '50%', width: '150px', height: '150px', margin: 'auto' }} />
+      <p className="font-serif mt-1">👋🏼 Hi, I'm Prathna Patel 👋🏼</p>
 
-      <p>Sign up to receive updates</p>
-      <form className="verticalForm" onSubmit={validateFormWithJS}>
-        <input type="email" placeholder="Enter email address" />
-        <button type="submit">Sign Up</button>
+      <p className='text-sm text-gray-500'>Sign up to receive updates and save your spot. Seats are limited.</p>
+      <form className="verticalForm" onSubmit={handleAddToWaitlist}>
+        <input type="email" placeholder="Enter email address" value={email} onChange={handleUserInput} />
+        <button type="submit">Sign Up to Save a Spot</button>
       </form>
+      <MyModal 
+        isOpen={isOpen}
+        closeModal={closeModal}
+        openModal={openModal}
+      />
     </div>
   )
+}
 export default Index;
