@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import MyModal from '../components/Modal';
+import SignupModal from '../components/SignupModal';
 
 async function validateFormWithJS(event) {
   event.preventDefault();
@@ -18,6 +19,7 @@ async function validateFormWithJS(event) {
 
 const Index = () => {
   let [isOpen, setIsOpen] = useState(false);
+  let [signupModalIsOpen, setSignupModalIsOpen] = useState(false);
   let [email, setEmail] = useState('');
 
   async function handleAddToWaitlist(event) {
@@ -25,16 +27,28 @@ const Index = () => {
 
     if (success) {
       clearEmail();
-      openModal();
+      openConfirmationModal();
     }
+  }
+
+  function handleSignUpClick() {
+    openSignupModal();
   }
 
   function closeModal() {
     setIsOpen(false)
   }
 
-  function openModal() {
+  function openConfirmationModal() {
     setIsOpen(true)
+  }
+
+  function openSignupModal() {
+    setSignupModalIsOpen(true);
+  }
+
+  function closeSignupModal() {
+    setSignupModalIsOpen(false);
   }
 
   function handleUserInput(e) {
@@ -54,7 +68,18 @@ const Index = () => {
             </Link>
             <div className="flex items-center space-x-1">
                 <ul className="hidden space-x-2 md:inline-flex">
-                    <li><Link href="/" className="px-4 py-2 font-semibold text-gray-600 rounded">Sign Up to Save a Spot</Link></li>
+                    <li>
+                      <button className="border px-8 py-4"
+                        style={{
+                          background: '#f4f4f4',
+                          padding: '14 20px',
+                          borderRadius: '4px',
+                        }}
+                        onClick={handleSignUpClick}
+                      >
+                        Sign Up to Save a Spot
+                      </button>
+                    </li>
                 </ul>
                 <div className="inline-flex md:hidden">
                     <button className="flex-none px-2 ">
@@ -71,10 +96,6 @@ const Index = () => {
         <div className="container">
           <h1>
             Your Personal Chat-Based Health Coach
-            {/* <br />
-            Chat-Based
-            <br />
-            Health Coaching */}
           </h1>
           <img src="/prathna.png" alt="profile pic" style={{ borderRadius: '50%', width: '150px', height: '150px', margin: 'auto' }} />
           <p className="mt-1">👋🏼 Hi, I'm Prathna Patel 👋🏼</p>
@@ -92,7 +113,11 @@ const Index = () => {
           <MyModal 
             isOpen={isOpen}
             closeModal={closeModal}
-            openModal={openModal}
+          />
+          <SignupModal
+            isOpen={signupModalIsOpen}
+            closeModal={closeSignupModal}
+            validateFormWithJS={validateFormWithJS}
           />
         </div>
       </div>
@@ -100,11 +125,8 @@ const Index = () => {
       <div className='px-3 font-Josefin bg-white'>
         <div className="max-w-screen-lg mx-auto text-center py-16 px-5">
           <h1>How we succeed together</h1>
-          {/* <p className='max-w-lg mx-auto mb-16 text-2xl'>
-            I'll help you set goals, create a plan, and hold you accountable to achieve your health goals.
-          </p> */}
           <div>
-            <div className='flex flex-row'>
+            <div className='flex flex-row' style={{ marginBottom: -100 }}>
               <div className='flex-1 flex flex-col justify-center text-left'>
                 <p className='font-bold'>Identify</p>
                 <h2>We start with you</h2>
@@ -114,18 +136,14 @@ const Index = () => {
                   schedule an initial 1 hour session to learn about your likes, dislikes, strengths, weaknesses
                    and goals.
                 </p>
-                {/* <ul>
-                  <li>Free 15 min consultation to see if we're a fit.</li>
-                  <li>Initial 1 hour session to learn about your likes, dislikes, and goals.</li>
-                </ul> */}
               </div>
               <div className='flex-1'>
-                <img src="/429-Daydreaming-of-Food.svg" alt="weight" style={{ margin: 'auto', maxHeight: 350 }} />
+                <img src="/429-Daydreaming-of-Food.svg" alt="weight" style={{ margin: 'auto', maxHeight: 450 }} />
               </div>
             </div>
-            <div className='flex flex-row'>
+            <div className='flex flex-row' style={{ marginBottom: -100 }}>
               <div className='flex-1'>
-                <img src="/148-Under-construction.svg" alt="plan" style={{ margin: 'auto', maxHeight: 350 }} />
+                <img src="/148-Under-construction.svg" alt="plan" style={{ margin: 'auto', maxHeight: 450 }} />
               </div>
               <div className='flex-1 flex flex-col justify-center text-left'>
                 <p className='font-bold'>Plan</p>
@@ -135,13 +153,9 @@ const Index = () => {
                   I'll help you leverage your likes and strengths, and provide solutions you might not have thought of.
                   You'll also have 24/7 access to me via the HeyCoach chat app, and to my library of resources to help you along the way.
                 </p>
-                {/* <ul>
-                  <li>Receive a personalized health plan based on your goals.</li>
-                  <li>Follow the plan to make progress towards your goals.</li>
-                </ul> */}
               </div>
             </div>
-            <div className='flex flex-row'>
+            <div className='flex flex-row' style={{ marginBottom: -100 }}>
               <div className='flex-1 flex flex-col justify-center text-left'>
                 <p className='font-bold'>Measure</p>
                 <h2>We measure progress</h2>
@@ -149,13 +163,9 @@ const Index = () => {
                   Finally, I'll hold you accountable to make progress against your goals. Along with your personalized plan, I provide
                   a schedule of check-ins to stay updated on your progress and make changes based on our collective feedback.
                 </p>
-                {/* <ul>
-                  <li>24/7 chat-based access to me for questions, support and check-ins.</li>
-                  <li>Personalized schedule of check-ins to stay updated on your progress and make any changes.</li>
-                </ul> */}
               </div>
               <div className='flex-1'>
-              <img src="/424-Setting-goals.svg" alt="goals" style={{ margin: 'auto', maxHeight: 350 }} />
+              <img src="/424-Setting-goals.svg" alt="goals" style={{ margin: 'auto', maxHeight: 450 }} />
               </div>
             </div>
           </div>
@@ -164,13 +174,26 @@ const Index = () => {
 
       <div className='max-w-screen-lg mx-auto px-3 font-Josefin'>
         <div className="text-center py-16 px-5">
-          <h2>Hear from my clients!</h2>
-        </div>
-      </div>
-
-      <div className='max-w-screen-lg mx-auto px-3 font-Josefin'>
-        <div className="text-center py-16 px-5">
           <h2>My Story</h2>
+          <div className='flex flex-row'>
+            <div className='flex-1 flex flex-col justify-center text-left'>
+              <p>
+                I went to grad school to become a physicians assistant because I’m interested in helping people live long and healthy lives. But while I was there what I witnessed shocked me - patients were barely managing their chronic disease and our medical system faces systemic barriers that make it impossible to support holistic wellness.
+              </p>
+              <p>
+                <b>At the same time I was going through my own personal wellness journey that taught me that true change begins from within, from adjusting our behaviors and mindsets and believing we are deserving of this healthful life.</b>
+              </p>
+              <p>
+                Those experiences motivated me to explore the world beyond traditional clinical care. I transitioned into healthcare management, and then into health tech, and finally into my career and passion now - Integrative Health Coaching.
+              </p>
+              <p>
+                I’m excited about being able to harness my unique experience in clinical science and health behavior change to build a toolbox that will assist you in reaching and maintaining your health goals. So let’s create a space of non-judgement where you can achieve a life of healthful balance on your own terms!
+              </p>
+            </div>
+            <div className='flex flex-1 justify-center'>
+              <img src="/prathna-about.png" alt="about pic" style={{ height: 550 }} />
+            </div>
+          </div>
         </div>
       </div>
     </>

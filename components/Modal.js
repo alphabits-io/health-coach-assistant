@@ -38,7 +38,7 @@ export default function MyModal({ isOpen, closeModal }) {
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      I'm eagerly waiting for this app to go live. 
+                      We're working hard to get ready for launch. We'll be in touch soon!
                       <br />
                       <br />
                       In the meantime, check your inbox for updates. I look forward to meeting you and 
