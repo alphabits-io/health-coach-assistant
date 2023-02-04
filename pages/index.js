@@ -123,10 +123,10 @@ const Index = () => {
       </div>
 
       <div className='px-3 font-Josefin bg-white'>
-        <div className="max-w-screen-lg mx-auto text-center py-16 px-5">
+        <div className="max-w-screen-lg mx-auto text-center pt-16 px-5">
           <h1>How we succeed together</h1>
           <div>
-            <div className='flex flex-row' style={{ marginBottom: -100 }}>
+            <div className='sm:flex sm:flex-row sm:-mb-24'>
               <div className='flex-1 flex flex-col justify-center text-left'>
                 <p className='font-bold'>Identify</p>
                 <h2>We start with you</h2>
@@ -137,15 +137,13 @@ const Index = () => {
                    and goals.
                 </p>
               </div>
-              <div className='flex-1'>
+              <div className='flex-1 -mt-10 sm:mt-0'>
                 <img src="/429-Daydreaming-of-Food.svg" alt="weight" style={{ margin: 'auto', maxHeight: 450 }} />
               </div>
             </div>
-            <div className='flex flex-row' style={{ marginBottom: -100 }}>
-              <div className='flex-1'>
-                <img src="/148-Under-construction.svg" alt="plan" style={{ margin: 'auto', maxHeight: 450 }} />
-              </div>
-              <div className='flex-1 flex flex-col justify-center text-left'>
+
+            <div className='sm:flex sm:flex-row sm:-mb-24'>
+              <div className='sm:order-2 flex-1 flex flex-col justify-center text-left'>
                 <p className='font-bold'>Plan</p>
                 <h2>We create a plan</h2>
                 <p>
@@ -154,8 +152,12 @@ const Index = () => {
                   You'll also have 24/7 access to me via the HeyCoach chat app, and to my library of resources to help you along the way.
                 </p>
               </div>
+              <div className='sm:order-1 flex-1 -mt-10 sm:mt-0'>
+                <img src="/148-Under-construction.svg" alt="plan" style={{ margin: 'auto', maxHeight: 450 }} />
+              </div>
             </div>
-            <div className='flex flex-row' style={{ marginBottom: -100 }}>
+
+            <div className='sm:flex sm:flex-row'>
               <div className='flex-1 flex flex-col justify-center text-left'>
                 <p className='font-bold'>Measure</p>
                 <h2>We measure progress</h2>
@@ -164,33 +166,36 @@ const Index = () => {
                   a schedule of check-ins to stay updated on your progress and make changes based on our collective feedback.
                 </p>
               </div>
-              <div className='flex-1'>
-              <img src="/424-Setting-goals.svg" alt="goals" style={{ margin: 'auto', maxHeight: 450 }} />
+              <div className='flex-1 -mt-10 sm:mt-0'>
+                <img src="/424-Setting-goals.svg" alt="goals" style={{ margin: 'auto', maxHeight: 450 }} />
               </div>
             </div>
+
           </div>
         </div>
       </div>
 
-      <div className='max-w-screen-lg mx-auto px-3 font-Josefin'>
-        <div className="text-center py-16 px-5">
-          <h2>My Story</h2>
-          <div className='flex flex-row'>
-            <div className='flex-1 flex flex-col justify-center text-left'>
-              <p>
+      <div className='max-w-screen-lg mx-auto px-3 font-Josefin relative'>
+        <img src="/prathna-about.png" alt="about pic" className='sm:hidden absolute inset-0 h-full w-full object-cover' />
+        <div className="sm:hidden absolute inset-0 bg-gray-900 bg-opacity-75"></div>
+        <div className="relative text-center py-16 px-5">
+          <h2 className='text-white sm:text-slate-600'>My Story</h2>
+          <div className="sm:flex sm:flex-row">
+            <div className="flex-1 flex flex-col justify-center text-left">
+              <p className='text-white sm:text-slate-600'>
                 I went to grad school to become a physicians assistant because I’m interested in helping people live long and healthy lives. But while I was there what I witnessed shocked me - patients were barely managing their chronic disease and our medical system faces systemic barriers that make it impossible to support holistic wellness.
               </p>
-              <p>
+              <p className='text-white sm:text-slate-600'>
                 <b>At the same time I was going through my own personal wellness journey that taught me that true change begins from within, from adjusting our behaviors and mindsets and believing we are deserving of this healthful life.</b>
               </p>
-              <p>
+              <p className='text-white sm:text-slate-600'>
                 Those experiences motivated me to explore the world beyond traditional clinical care. I transitioned into healthcare management, and then into health tech, and finally into my career and passion now - Integrative Health Coaching.
               </p>
-              <p>
+              <p className='text-white sm:text-slate-600'>
                 I’m excited about being able to harness my unique experience in clinical science and health behavior change to build a toolbox that will assist you in reaching and maintaining your health goals. So let’s create a space of non-judgement where you can achieve a life of healthful balance on your own terms!
               </p>
             </div>
-            <div className='flex flex-1 justify-center'>
+            <div className='hidden sm:flex flex-1 justify-center'>
               <img src="/prathna-about.png" alt="about pic" style={{ height: 550 }} />
             </div>
           </div>
@@ -200,3 +205,6 @@ const Index = () => {
   )
 }
 export default Index;
+
+
+//  bg-no-repeat bg-cover bg-center bg-[url('/prathna-about.png')] sm:bg-none
