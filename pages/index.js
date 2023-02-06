@@ -67,9 +67,9 @@ const Index = () => {
                 <span className="text-2xl font-bold" style={{ color: '#642e59' }}>HeyCoach</span>
             </Link>
             <div className="flex items-center space-x-1">
-                <ul className="hidden space-x-2 md:inline-flex">
+                <ul className="space-x-2 inline-flex">
                     <li>
-                      <button className="border px-8 py-4"
+                      <button className="border px-4 py-3 md:px-8 md:py-4"
                         style={{
                           background: '#f4f4f4',
                           padding: '14 20px',
@@ -81,13 +81,13 @@ const Index = () => {
                       </button>
                     </li>
                 </ul>
-                <div className="inline-flex md:hidden">
+                {/* <div className="inline-flex md:hidden">
                     <button className="flex-none px-2 ">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                         </svg>
                     </button>
-                </div>
+                </div> */}
             </div>
         </div>
       </header>
