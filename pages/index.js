@@ -77,7 +77,7 @@ const Index = () => {
                         }}
                         onClick={handleSignUpClick}
                       >
-                        Sign Up to Save a Spot
+                        Join Waitlist
                       </button>
                     </li>
                 </ul>
@@ -108,7 +108,7 @@ const Index = () => {
 
           <form className="verticalForm" onSubmit={handleAddToWaitlist}>
             <input type="email" placeholder="Enter email address" value={email} onChange={handleUserInput} />
-            <button type="submit">Sign Up to Save a Spot</button>
+            <button type="submit">Join Waitlist</button>
           </form>
           <MyModal 
             isOpen={isOpen}

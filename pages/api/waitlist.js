@@ -1,4 +1,5 @@
 var Airtable = require('airtable');
+import { sendConsultationSchedulingEmail } from '../../services/aws-ses';
 var base = new Airtable({apiKey: process.env.AIRTABLE_API_KEY}).base(process.env.AIRTABLE_BASE_ID);
 
 function addSubscriberToWaitlist(email) {
@@ -19,6 +20,7 @@ export default function handler(req, res) {
 
   if (email) {
     addSubscriberToWaitlist(email);
+    sendConsultationSchedulingEmail(email);
     return res.status(200).json({ success: true });
   }
 
