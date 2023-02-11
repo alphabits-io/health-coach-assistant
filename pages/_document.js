@@ -5,7 +5,7 @@ export default function Document() {
     <Html>
       <Head />
       <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet" />
+      <link rel="shortcut icon" href="/_Logo.png" />
       <body>
         <Main />
         <NextScript />

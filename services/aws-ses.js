@@ -13,7 +13,7 @@ AWS.config.getCredentials(function (error) {
 const ses = new AWS.SES({ apiVersion: "2010-12-01" });
 
 // change this to the "to" email that you want
-const adminMail = "kaustubh.bhardwaj86@gmail.com";
+const adminMail = "prathna105@gmail.com";
 // Create a transporter of nodemailer
 const transporter = nodemailer.createTransport({
     SES: ses,
