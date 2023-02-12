@@ -45,13 +45,12 @@ export const sendConsultationSchedulingEmail = async (userEmail) => {
           </head>
           <body>
             <div>
-              <div>A message from Prathna:</div>
               <div class="coach-message">
                 <p>Hi there,</p>
 
                 <p>Thanks for signing up for the waitlist!</p>
 
-                <p>You can use this link to schedule your <b>free</b> consultation: https://calendly.com/k-bard/30min</p>
+                <p>You can use this link to schedule your <b>free</b> consultation: https://calendly.com/prathna105/new-client-consultation</p>
 
                 <p>
                   We can use the time to discuss your health goals and how I can help you achieve them.
