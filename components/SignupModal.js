@@ -60,11 +60,7 @@ export default function SignupModal({ isOpen, closeModal, validateFormWithJS }) 
                             <>
                                 <div className="mt-2">
                                     <p className="text-sm text-gray-500">
-                                    We're working hard to get ready for launch. We'll be in touch soon!
-                                    <br />
-                                    <br />
-                                    In the meantime, check your inbox for updates. I look forward to meeting you and 
-                                        helping you achieve your health goals!
+                                      Check your inbox for a link to book a free 15 minute consultation.
                                     </p>
                                 </div>
                 
@@ -82,7 +78,7 @@ export default function SignupModal({ isOpen, closeModal, validateFormWithJS }) 
                             <div className="mt-2">
                                 <form className="verticalForm" onSubmit={(event) => handleAddToWaitlist(event)}>
                                     <input type="email" placeholder="Enter email address" value={email} onChange={handleUserInput} />
-                                    <button type="submit">Sign Up to Save a Spot</button>
+                                    <button type="submit">Sign Up</button>
                                 </form>
                             </div>
                         )}

@@ -77,7 +77,7 @@ const Index = () => {
                         }}
                         onClick={handleSignUpClick}
                       >
-                        Join Waitlist
+                        Book a Free 15-Minute Call
                       </button>
                     </li>
                 </ul>
@@ -108,7 +108,7 @@ const Index = () => {
 
           <form className="verticalForm" onSubmit={handleAddToWaitlist}>
             <input type="email" placeholder="Enter email address" value={email} onChange={handleUserInput} />
-            <button type="submit">Join Waitlist</button>
+            <button type="submit">Book a Free 15-Minute Call</button>
           </form>
           <MyModal 
             isOpen={isOpen}
@@ -179,7 +179,7 @@ const Index = () => {
         <img src="/prathna-about.png" alt="about pic" className='sm:hidden absolute inset-0 h-full w-full object-cover' />
         <div className="sm:hidden absolute inset-0 bg-gray-900 bg-opacity-75"></div>
         <div className="relative text-center py-16 px-5">
-          <h2 className='text-white sm:text-slate-600'>My Story</h2>
+          <h1 className='text-white sm:text-slate-600'>My Story</h1>
           <div className="sm:flex sm:flex-row">
             <div className="flex-1 flex flex-col justify-center text-left">
               <p className='text-white sm:text-slate-600'>
@@ -199,6 +199,64 @@ const Index = () => {
               <img src="/prathna-about.png" alt="about pic" style={{ height: 550 }} />
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className='max-w-screen-lg mx-auto px-3 font-Josefin'>
+        <div className="text-center py-16 px-5">
+          {/* <h1>Exceptional value, simple pricing</h1> */}
+          <h1>Invest in your health today</h1>
+          <h2>Not sure yet? Sign up to book a free 15 minute consultation.</h2>
+          <button className="border px-4 py-3 mb-8 md:px-8 md:py-4"
+                        style={{
+                          background: 'white',
+                          padding: '14 20px',
+                          borderRadius: '4px',
+                        }}
+            onClick={handleSignUpClick}>
+              Book a Free 15-Minute Call
+          </button>
+
+          <div className="m-auto w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8"> {/* dark:bg-gray-800 dark:border-gray-700 */}
+            <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Monthly plan</h5>
+            <div className="flex items-baseline text-gray-900 dark:text-zinc-900">
+                <span className="text-3xl font-semibold">$</span>
+                <span className="text-5xl font-extrabold tracking-tight">50</span>
+                <span className="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
+            </div>
+            {/* <!-- List --> */}
+            <ul role="list" className="space-y-5 my-7">
+                <li className="flex space-x-3">
+                    {/* <!-- Icon --> */}
+                    <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5" style={{ color: '#642e59' }} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path></svg>
+                    <span className="text-base font-normal leading-tight text-gray-500">Unlimited chat via HeyCoach app</span>
+                </li>
+                <li className="flex space-x-3">
+                    {/* <!-- Icon --> */}
+                    <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5" style={{ color: '#642e59' }} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path></svg>
+                    <span className="text-base font-normal leading-tight text-gray-500">1 hour intro session</span>
+                </li>
+                <li className="flex space-x-3">
+                    {/* <!-- Icon --> */}
+                    <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5" style={{ color: '#642e59' }} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path></svg>
+                    <span className="text-base font-normal leading-tight text-gray-500">Personalized plan custom made for you</span>
+                </li>
+                <li className="flex space-x-3">
+                    {/* <!-- Icon --> */}
+                    <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5" style={{ color: '#642e59' }} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path></svg>
+                    {/* <span className="text-base font-normal leading-tight text-gray-500">Personalized check-in schedule for feedback</span> */}
+                    <span className="text-base font-normal leading-tight text-gray-500 text-left">Personalized check-in schedule to measure progress</span>
+                </li>
+                <li className="flex space-x-3">
+                    {/* <!-- Icon --> */}
+                    <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5" style={{ color: '#642e59' }} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path></svg>
+                    {/* <span className="text-base font-normal leading-tight text-gray-500">Personalized check-in schedule for feedback</span> */}
+                    <span className="text-base font-normal leading-tight text-gray-500 text-left">Schedule in-person sessions any time - $50 / half hour</span>
+                </li>
+            </ul>
+            <a type="button" target="_blank" href="https://buy.stripe.com/fZecQa2aO0lygbm145" style={{ background: '#642e59' }} className="text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Choose plan</a>
+          </div>
+
         </div>
       </div>
     </>
