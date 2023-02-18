@@ -183,7 +183,7 @@ const Index = () => {
           <div className="sm:flex sm:flex-row">
             <div className="flex-1 flex flex-col justify-center text-left">
               <p className='text-white sm:text-slate-600'>
-                I went to grad school to become a physicians assistant because I’m interested in helping people live long and healthy lives. But while I was there what I witnessed shocked me - patients were barely managing their chronic disease and our medical system faces systemic barriers that make it impossible to support holistic wellness.
+                I went to grad school to become a physician assistant because I’m interested in helping people live long and healthy lives. But while I was there what I witnessed shocked me - patients were barely managing their chronic disease and our medical system faces systemic barriers that make it impossible to support holistic wellness.
               </p>
               <p className='text-white sm:text-slate-600'>
                 <b>At the same time I was going through my own personal wellness journey that taught me that true change begins from within, from adjusting our behaviors and mindsets and believing we are deserving of this healthful life.</b>
