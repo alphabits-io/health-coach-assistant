@@ -103,7 +103,7 @@ const Index = () => {
           <p className='max-w-md mx-auto'>
             I'm a certified integrative health coach and I help people like you achieve their health goals.
             I've partnered with HeyCoach to provide you with a personalized, chat-based health coaching experience.
-            Sign up to save your spot and hear from me when we're ready to accept new clients!
+            Sign up to book a free 15-minute consultation!
           </p>
 
           <form className="verticalForm" onSubmit={handleAddToWaitlist}>
