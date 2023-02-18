@@ -69,7 +69,7 @@ const Index = () => {
             <div className="flex items-center space-x-1">
                 <ul className="space-x-2 inline-flex">
                     <li>
-                      <button className="border px-4 py-3 md:px-8 md:py-4"
+                      <button className="border px-4 py-3 text-sm md:text-base md:px-8 md:py-4"
                         style={{
                           background: '#f4f4f4',
                           padding: '14 20px',
