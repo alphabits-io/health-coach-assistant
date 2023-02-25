@@ -9,7 +9,7 @@ body {
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 60px 20px;
+  /* padding: 60px 20px; */
   text-align: center;
 }
 h1 {
@@ -56,12 +56,10 @@ button[type="submit"]:hover {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 400px;
-  margin: auto;
 }
 
 @media only screen and (max-width: 600px) {
   .verticalForm {
-    width: 80%;
+    width: 100%;
   }
 }
